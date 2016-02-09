@@ -1,0 +1,34 @@
+<ion-modal-view cache-view="false" class="ion-nifty-modal college-details" style="width: 100%;
+  height: 100% !important;
+  top: auto;
+  left: auto;
+  right: 0px;
+  bottom: 0px; border-radius:0px;" ng-controller="PlayListDetailModal as detailModalCtrl" can-swipe-back="false">
+    <ion-header-bar>
+        <h1 class="title">Song Detail</h1>
+        <div class="buttons">
+            <button class="button" ng-click="detailModalCtrl.modalService.close()">close</button>
+        </div>
+    </ion-header-bar>
+    <div class="ion-modal-content-custom" style="background:white">
+        <ion-content class="college-detail-content">
+            <ion-slide-box active-slide="detailModalCtrl.activeSong"
+            show-pager="true" does-continue="true"
+            on-swipe-left="detailModalCtrl.onSwipeLeft($event)"
+            on-swipe-right="detailModalCtrl.onSwipeRight($event)"
+            >
+              <ion-slide ng-repeat="song in detailModalCtrl.songs">
+                <div class="box blue" ng-if="detailModalCtrl.activeSong-1 === $index">
+                  <div ng-controller="PlaylistCtrl as detailCtrl">
+                    <!--ion-list>
+                      <ion-item class="item" -->
+                        <h1>{{detailCtrl.song}}</h1>
+                      <!--/ion-item>
+                    </ion-list -->
+                </div>
+                </div>
+              </ion-slide>
+          </ion-slide-box>
+        </ion-content>
+    </div>
+</ion-modal-view>
