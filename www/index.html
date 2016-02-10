@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/ionic.app.css" rel="stylesheet">
     <link href="lib/ionic-nifty-modal/nifty.modal.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
@@ -15,6 +15,9 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ng-lodash/build/ng-lodash.min.js"></script>
+    <script src="lib/lodash/dist/lodash.min.js"></script>
+    <!--script src="lib/lodash/dist/lodash.underscore.min.js"></scrip-->
     <script src="lib/angular-animate/angular-animate.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
@@ -26,7 +29,7 @@
     <script src="js/controllers.js"></script>
   </head>
 
-  <body ng-app="starter">
+  <body ng-app="starter" class="deepblue-theme">
     <ion-nav-view></ion-nav-view>
   </body>
 </html>

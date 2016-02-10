@@ -1,30 +1,39 @@
-<ion-modal-view cache-view="false" class="ion-nifty-modal college-details" style="width: 100%;
+<ion-modal-view cache-view="false" class="ion-nifty-modal college-details deepblue-theme modal-popup"
+  style="width: 100%;
   height: 100% !important;
   top: auto;
   left: auto;
   right: 0px;
-  bottom: 0px; border-radius:0px;" ng-controller="PlayListDetailModal as detailModalCtrl" can-swipe-back="false">
-    <ion-header-bar>
+  bottom: 0px;
+  border-radius:0px;
+  background: rgba(0, 0, 0, 0) linear-gradient(90deg, #00c6ff 10%, #0072ff 90%) repeat scroll 0 0;" ng-controller="PlayListDetailModal as detailModalCtrl" can-swipe-back="false">
+    <ion-header-bar class="bar-deepblue" style="background: rgba(0, 0, 0, 0) linear-gradient(90deg, #00c6ff 10%, #0072ff 90%) repeat scroll 0 0">
         <h1 class="title">Song Detail</h1>
         <div class="buttons">
             <button class="button" ng-click="detailModalCtrl.modalService.close()">close</button>
         </div>
     </ion-header-bar>
-    <div class="ion-modal-content-custom" style="background:white">
-        <ion-content class="college-detail-content">
+    <div class="ion-modal-content-custom" style="background: rgba(0, 0, 0, 0) linear-gradient(90deg, #00c6ff 10%, #0072ff 90%) repeat scroll 0 0">
+        <ion-content class="college-detail-content" >
             <ion-slide-box active-slide="detailModalCtrl.activeSong"
-            show-pager="true" does-continue="true"
-            on-swipe-left="detailModalCtrl.onSwipeLeft($event)"
-            on-swipe-right="detailModalCtrl.onSwipeRight($event)"
+            show-pager="false" does-continue="true"
+            on-slide-changed="detailModalCtrl.slideChanged($index)" watch-slides
             >
-              <ion-slide ng-repeat="song in detailModalCtrl.songs">
-                <div class="box blue" ng-if="detailModalCtrl.activeSong-1 === $index">
+              <ion-slide ng-repeat="song in detailModalCtrl.songs track by $index">
+                <div ng-if="detailModalCtrl.activeSong === $index">
                   <div ng-controller="PlaylistCtrl as detailCtrl">
-                    <!--ion-list>
-                      <ion-item class="item" -->
-                        <h1>{{detailCtrl.song}}</h1>
-                      <!--/ion-item>
-                    </ion-list -->
+                    <ion-list>
+                      <ion-item class="item wrap">
+                        <h1>{{detailCtrl.song.song.id}} - {{detailCtrl.song.song.title}}</h1>
+                      </ion-item>
+                      <ion-item class="item wrap">
+                        {{detailCtrl.song.song.detail}}
+                      </ion-item>
+
+                      <ion-item class="item wrap">
+                        {{detailCtrl.song.song.detail}}
+                      </ion-item>
+                    </ion-list>
                 </div>
                 </div>
               </ion-slide>

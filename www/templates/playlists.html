@@ -1,8 +1,8 @@
-<ion-view view-title="Playlists">
+<ion-view view-title="Playlists" class="deepblue-theme">
   <ion-content ng-controller="PlaylistsCtrl">
     <ion-list>
-      <ion-item ng-repeat="playlist in playlists" ng-click="gotoDetail(playlist)">
-        {{playlist.title}}
+      <ion-item ng-repeat="(index, playlist) in playlists" ng-click="gotoDetail(index, playlist)">
+        {{index}} - {{playlist.title}}
       </ion-item>
     </ion-list>
   </ion-content>
