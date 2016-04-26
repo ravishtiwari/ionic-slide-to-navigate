@@ -1,0 +1,24 @@
+machine:
+  node:
+    version: v4.3.1
+  ruby:
+    version: 3.8.1
+
+dependencies:
+    post:
+    - npm install 
+    - npm install -g gulp
+    - npm install -g webpack
+    - npm install -g ionic
+    - npm install -g cordova
+    - npm install -g ios-sim
+    - npm install -g ios-deploy
+    - bower install
+    - npm install -g node-sass
+deployment:
+    branch: master
+    commands:
+        - ionic state restore
+        - ionic resources
+        - ionic build android
+        - ionic build ios
