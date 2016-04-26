@@ -16,9 +16,10 @@ dependencies:
     - bower install
     - npm install -g node-sass
 deployment:
-    branch: master
-    commands:
-        - ionic state restore
-        - ionic resources
-        - ionic build android
-        - ionic build ios
+    beta:
+        branch: master
+        commands:
+            - ionic state restore
+            - ionic resources
+            - ionic build android
+            - ionic build ios
