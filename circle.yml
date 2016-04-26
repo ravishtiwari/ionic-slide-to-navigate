@@ -12,7 +12,6 @@ dependencies:
     - npm install -g ionic
     - npm install -g cordova
     - npm install -g ios-sim
-    - npm install -g ios-deploy
     - bower install
     - npm install -g node-sass
 deployment:
@@ -22,4 +21,3 @@ deployment:
             - ionic state restore
             - ionic resources
             - ionic build android
-            - ionic build ios
